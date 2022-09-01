@@ -118,10 +118,6 @@ function setup() {
 const startButtonHandler = () => {
   startButton.style.display = 'none';
   document.getElementById('buttonContainer').style.display = 'none';
-  userStartAudio();
-  mic = new p5.AudioIn();
-  mic.start();
-  fft = new p5.FFT();
   // video = createCapture(vidConstrains,canvasInit);
   mediaHandler();
 }
@@ -145,6 +141,10 @@ const mediaHandler = () => {
     selectCam.onchange = () => {
       selectCam.style.display = 'none';
       vidConstrains.video.deviceId = selectCam.value.id;
+      userStartAudio();
+      mic = new p5.AudioIn();
+      mic.start();
+      fft = new p5.FFT();
       video = createCapture(vidConstrains,canvasInit);
       // navigator.mediaDevices.getUserMedia(vidConstrains)
       // .then((stream) => {
