@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="./libraries/p5.min.js"></script>
+    <script src="./libraries/p5.sound.min.js"></script>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>  
+  <script
+    src="https://cdn.jsdelivr.net/npm/gpu.js@latest/dist/gpu-browser.min.js">
+  </script>
+<style>
+</style>
+  </head>
+
+  <body>
+      <div class="container" id="buttonContainer">
+    <button id="startButton">LET'S START</button>
+  </div>
+  <div class="container" id='camSelectorContainr' style="left:40%; right:40%; top: 40%;">
+    <select id='selectCam' name='webCam' style="display: none; width: 50%; text-align: center;">
+    <option name='select'>
+      Please select a web camera :)
+    </option></select>
+
+  </div>
+    <script src="sketch.js" ></script>
+  </body>
+</html>
