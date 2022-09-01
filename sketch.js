@@ -50,12 +50,12 @@ const possibleText = [
 const vidConstrains = {
   audio:false,
   video: {
-    deviceId: '',
+    groupId: '',
     // facingMode: 'user',
       // minWidth: window.innerWidth,
       // minHeight: window.innerHeight,
-      maxWidth: window.innerWidth,
-      maxHeight: window.innerHeight
+      width: {min: 1280, ideal: window.innerWidth},
+      height: {min: 720, ideal: window.innerHeight}
 }
 }
 
