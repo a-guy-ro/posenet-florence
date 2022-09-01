@@ -146,18 +146,18 @@ const mediaHandler = () => {
       mic.start();
       fft = new p5.FFT();
       video = createCapture(vidConstrains,canvasInit);
-      // navigator.mediaDevices.getUserMedia(vidConstrains)
-      // .then((stream) => {
-        
-      //   // document.createElement('video');
-      //   // video.srcObject = stream;
-      //   // canvasInit();
-      //   /* use the stream */
-      // })
-      // .catch((err) => {
-      //   alert(err);
-      //   /* handle the error */
-      // });
+      navigator.mediaDevices.getUserMedia(vidConstrains)
+      .then((stream) => {
+        console.log(stream);
+        // document.createElement('video');
+        // video.srcObject = stream;
+        // canvasInit();
+        /* use the stream */
+      })
+      .catch((err) => {
+        alert(err);
+        /* handle the error */
+      });
 
     }
     // console.log()
