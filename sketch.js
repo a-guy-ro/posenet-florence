@@ -52,12 +52,10 @@ const vidConstrains = {
   video: {
     deviceId: '',
     // facingMode: 'user',
-    mandatory: {
       // minWidth: window.innerWidth,
       // minHeight: window.innerHeight,
       maxWidth: window.innerWidth,
       maxHeight: window.innerHeight
-    }
 }
 }
 
@@ -129,18 +127,20 @@ const mediaHandler = () => {
   selectCam = document.getElementById('selectCam');
   navigator.mediaDevices.enumerateDevices()
   .then((devices) => {
+    console.log(devices);
     videoDevices = devices.filter(device=> device.kind==='videoinput');
+    console.log(videoDevices);
     videoDevices.forEach(device=> {
       let currentOption = document.createElement('option');
-      currentOption.value = device.label;
-      currentOption.id = device.id;
-      currentOption.innerText = device.label;
+      currentOption.value = device.label != '' ? device.label : 'computer camera';
+      currentOption.id = device.groupId;
+      currentOption.innerText = currentOption.value;
       selectCam.append(currentOption);
     })
     selectCam.style.display = 'block';
     selectCam.onchange = () => {
       selectCam.style.display = 'none';
-      vidConstrains.video.deviceId = selectCam.value.id;
+      vidConstrains.video.groupId = selectCam.value.id;
       userStartAudio();
       mic = new p5.AudioIn();
       mic.start();
